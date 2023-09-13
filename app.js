@@ -12,6 +12,7 @@ function voidExample() {
     console.log(`Hello`);
 }
 voidExample();
+//anonymous function with explicit type definition
 let sub //return tyoe
  = function (num1, num2) {
     return num1 - num2;

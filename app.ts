@@ -13,7 +13,7 @@ function voidExample (){
     console.log(`Hello`)
 }
 voidExample();
-
+//anonymous function with explicit type definition
 let sub : (num1:number,num2:number)=>number//return tyoe
 = function(
     num1:number,
