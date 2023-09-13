@@ -30,3 +30,24 @@ function abc(message) {
 }
 greeter(abc); //passing function as argument and program starts from this
 //abc is not called. it is passed as argument thats why no paranthesis
+//optional parameter
+function abcd(name, age, contact) {
+    if (contact) {
+        console.log(contact);
+    }
+    else {
+        console.log(`No contact number`);
+    }
+    ;
+}
+abcd('ali', 19, 300);
+// default paramaters in optional values
+function exp(name, contact, address = `karachi`) {
+    console.log(name, contact, address);
+}
+exp('Juned', 300, 'hyderabad');
+//rest parameters using rest operator ...
+function restEg(op, ...numm) {
+    console.log(op, numm);
+}
+restEg('Juned', 1, 2, 3, 4);
