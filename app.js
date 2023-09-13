@@ -12,3 +12,8 @@ function voidExample() {
     console.log(`Hello`);
 }
 voidExample();
+let sub //return tyoe
+ = function (num1, num2) {
+    return num1 - num2;
+};
+console.log(sub(15, 12));

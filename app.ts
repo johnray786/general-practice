@@ -13,3 +13,13 @@ function voidExample (){
     console.log(`Hello`)
 }
 voidExample();
+
+let sub : (num1:number,num2:number)=>number//return tyoe
+= function(
+    num1:number,
+    num2:number
+):number {
+    return num1-num2;
+};
+
+console.log(sub(15,12));
