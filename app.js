@@ -19,6 +19,7 @@ let sub //return tyoe
 };
 console.log(sub(15, 12));
 // what is callback function & arrow function & callback & async & sync
+//reference in const scenario
 //arrow function or lambda are anonymous function
 let multiply = (a, b) => {
 };
@@ -47,7 +48,15 @@ function exp(name, contact, address = `karachi`) {
 }
 exp('Juned', 300, 'hyderabad');
 //rest parameters using rest operator ...
+//rest parameters are used in the end of function parameters
 function restEg(op, ...numm) {
     console.log(op, numm);
 }
 restEg('Juned', 1, 2, 3, 4);
+//tuples or fixed array is where you fix the length of the array
+let a = [1, 2, 3, 4];
+//but if you use a.push() it lets you add the value in the array. thats an issue in TS.
+// we can also push() in const
+const bbb = ["A", "B", "C"];
+bbb.push("D");
+console.log(bbb);
