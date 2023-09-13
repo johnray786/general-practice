@@ -18,3 +18,4 @@ let sub //return tyoe
     return num1 - num2;
 };
 console.log(sub(15, 12));
+// what is callback function & arrow function

@@ -23,3 +23,5 @@ let sub : (num1:number,num2:number)=>number//return tyoe
 };
 
 console.log(sub(15,12));
+
+// what is callback function & arrow function
