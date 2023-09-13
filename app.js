@@ -18,4 +18,15 @@ let sub //return tyoe
     return num1 - num2;
 };
 console.log(sub(15, 12));
-// what is callback function & arrow function
+// what is callback function & arrow function & callback & async & sync
+//arrow function or lambda are anonymous function
+let multiply = (a, b) => {
+};
+function greeter(fn) {
+    fn("hello");
+}
+function abc(message) {
+    console.log(message);
+}
+greeter(abc); //passing function as argument and program starts from this
+//abc is not called. it is passed as argument thats why no paranthesis
