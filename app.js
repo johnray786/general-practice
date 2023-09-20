@@ -13,7 +13,7 @@ function voidExample() {
 }
 voidExample();
 //anonymous function with explicit type definition
-let sub //return tyoe
+let sub //return type
  = function (num1, num2) {
     return num1 - num2;
 };
