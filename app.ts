@@ -36,6 +36,7 @@ function greeter(fn:(message:string)=>void){
     fn("hello");
 }
 function abc(message:string){
+
     console.log(message);
 }
 greeter(abc)//passing function as argument and program starts from this
