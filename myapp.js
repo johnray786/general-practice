@@ -74,6 +74,7 @@
 //then woF is called with noF as its argument
 //note that noF is not called as a function as it is without paranthesis
 // //OPTIONAL PARAMETERS IN THE FUNCTION
+//optional paramter is added using "?" question mark after parameter name
 // function stRecord(stName:string,stAge:number,stCity?:string){
 //     if(stCity){
 //         console.log(`${stName} is of ${stAge} years, from ${stCity}.`);
@@ -85,8 +86,30 @@
 // stRecord('Juned',35,'TMK');
 // stRecord('Dilawar',25);
 //DEFAULT PARAMETER IN THE FUNCTION
-function carDetails(name, model, make = 1999) {
-    console.log(name, model, make);
-}
-carDetails('Suzuki', 'ALTO');
-carDetails('TOYOTA', 'PRIUS', 2022);
+//this lets you set default parameter using = sign in a function
+// function carDetails(name:string,model:string,make=1999){
+//     console.log(name,model,make);
+// }
+// carDetails('Suzuki','ALTO');
+// carDetails('TOYOTA','PRIUS',2022);
+// //REST PARAMETER EXAMPLE
+//with rest parameters you can add many parameters at once in a function
+// function yourfavfood(name:string,...names:string[]){
+//     console.log(name,names)
+// }
+// yourfavfood('biryani','burger','pizza','pulao','steak');
+// function totalSum(...num:number[]){
+// let sum:number=0;
+//     for(let i=0;i<num.length;i++){
+//         sum=sum+num[i]
+// }
+// console.log(sum);
+// }
+// totalSum(10,20,30,40,50,60,70,80,90,100);
+//TUPLES PRACTICE
+// let ab:['John','Wick']=["John","Wick"];
+// console.log(ab);
+// //this is a fixed array you can not ammend it
+// const abb = ['Ahmed',"Bhai"];
+// abb.push("UK");
+// console.log(abb);
