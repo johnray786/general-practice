@@ -55,24 +55,56 @@
 // //needs clarification
 
 
-let orderPizza = (cb:()=>void, handleErrorCb:()=>void)=>{
-    console.log(`Preparing Pizza`);
-    let isBurnt = true;
-    setTimeout(() => {
-        if(!isBurnt){
-            cb();
-        }else{
-            handleError();
-        }
-    }, 5000);
-    console.log(`Test Console`);
+// let orderPizza = (cb:()=>void, handleErrorCb:()=>void)=>{
+//     console.log(`Preparing Pizza`);
+//     let isBurnt = true;
+//     setTimeout(() => {
+//         if(!isBurnt){
+//             cb();
+//         }else{
+//             handleError();
+//         }
+//     }, 5000);
+//     console.log(`Test Console`);
+// }
+
+// let ringBell = ()=> {
+//     console.log(`Your Pizza Is Ready`);
+// }
+// let handleError = ()=> {
+//     console.log(`Something went wrong`);
+// }
+
+// let pizza = orderPizza(ringBell,handleError);
+////this approach become CALLBACK HELL if code is bigger
+
+//// better appraoch is promises
+////either promise is kept/successful, error/broken or pending 
+//promise body
+let makeOrder = ()=>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            let burnt = true;
+            if(burnt){reject(`BURNT PIZZA`)}
+            else {resolve(`YOUR PIZZA IS READY`);}
+        }, 4000);
+        
+    });
+}
+// console.log(makeOrder()
+//     .then((value)=>console.log(value))//resolve function body
+//     .catch(()=>console.log(`Something went wrong!`))//reject function body
+
+//async & await is the best practice of all then .then .catch
+let getOrder = async () => {
+// in this approach try and catch is used for error handling
+try{
+    let result = await makeOrder();
+    console.log(result);}
+catch(error){
+    console.log(error);
+}
 }
 
-let ringBell = ()=> {
-    console.log(`Your Pizza Is Ready`);
-}
-let handleError = ()=> {
-    console.log(`Something went wrong`);
-}
-
-let pizza = orderPizza(ringBell,handleError);
+getOrder();
+//for rejection you need error handling
