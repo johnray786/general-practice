@@ -61,3 +61,15 @@
 // }
 // console.log(subbb(70,11));
 // //above are the examples of arrow functions or lambda functions
+function wtF(fn) {
+    fn(`WTF is this clownry?`);
+}
+function noF(msgs) {
+    console.log(msgs);
+}
+wtF(noF);
+//above wtF function accepts function as parameter and contains only
+//a string and does not return any value
+//function noF takes a string and displays it
+//then woF is called with noF as its argument
+//note that noF is not called as a function as it is without paranthesis
