@@ -69,10 +69,20 @@
 // }
 // wtF(noF);
 //above wtF function accepts function as parameter and contains only
+//this is called callback function
 //a string and does not return any value
 //function noF takes a string and displays it
 //then woF is called with noF as its argument
 //note that noF is not called as a function as it is without paranthesis
+// function parentFunction (cbFunc:any){
+//     console.log(`Parent Function`);
+//     cbFunc();
+// }
+// function cb(){
+//     console.log(`CallBack Function`);
+// }
+// parentFunction(cb);
+// console.log(`First`);
 // //OPTIONAL PARAMETERS IN THE FUNCTION
 //optional paramter is added using "?" question mark after parameter name
 // function stRecord(stName:string,stAge:number,stCity?:string){
@@ -113,3 +123,59 @@
 // const abb = ['Ahmed',"Bhai"];
 // abb.push("UK");
 // console.log(abb);
+// // ASYNC FUNCTION PRACTICE
+// console.log(`First code to be run FIRST`);
+// setTimeout(() => {
+//     console.log(`This is second step but will be run THIRD`);
+// }, 2000);
+// console.log(`Third step will be run SECOND`);
+// let orderKFC = ()=>{
+//     console.log(`Order Received`);
+//     console.log(`Preparing Zinger`);
+//     setTimeout(() => {
+//         console.log(`Your Zinger is ready for Delivery`);
+//     }, 5000);
+// }
+// let myOrder = orderKFC();
+// console.log(`Please wait`)
+// //in above example when orderKFC is called then
+// //first thing to run is Order Received
+// //second thing to run is Preparing Zinger
+// //third theres a timeout with 5sec delay 
+// //so callstack goes to  Please wait instead of Your Zinger..
+// //so Please wait is printed third
+// //then after 5 sec delay Your Zinger ... is printed fourth
+//CALLBACK FUNCTIONS
+// let orderBigMac = (cb:()=>void,errorhandle:()=>void)=>{
+// console.log(`Preparing Burger`);
+// let isAsh=true;
+// setTimeout(() => {
+//     if(isAsh){errorhandle();}
+//     else{cb();}
+// }, 4000);
+// }
+// let macReady = ()=>{console.log(`BigMac Ready!`)};
+// let macError = ()=>{console.log(`BigMac NOT ready, something went wrong!`)};
+// orderBigMac(macReady,macError);
+// //above method works fine in simple scenarios
+// //but in complex scenarios when there are many functions
+// //the situation becomes nightmare
+//BETTER APPROACH IS PROMISES THAN CALLBACKS
+console.log(`Order Received`);
+let chkPromise = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let jal = true;
+            if (jal) {
+                reject();
+            }
+            else {
+                resolve('Enjoy Your Meal');
+            }
+        }, 3000);
+    });
+};
+chkPromise()
+    .then((value) => console.log(value))
+    .catch(() => console.log('BURNT'));
+chkPromise().catch(() => console.log('BURNT'));
