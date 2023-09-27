@@ -7,6 +7,15 @@
 // let worldTeams:(string|number)[]=["AUS",1,"PAK",2,"IND",3];
 // //you can declare arrays as teamRank:Array<string|number>=[""]
 // let teamRank: Array<string|number>=[1,"PAK",2,"IND",3,"BAN"];
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 // console.log(asiaTeams);
 // //above will print the whole asiaTeams array
 // console.log(asiaTeams[0]);
@@ -161,21 +170,115 @@
 // //but in complex scenarios when there are many functions
 // //the situation becomes nightmare
 //BETTER APPROACH IS PROMISES THAN CALLBACKS
-console.log(`Order Received`);
-let chkPromise = () => {
+// console.log(`Order Received`)
+// let chkPromise = () => {
+//     return new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//         let jal = true;
+//         if (jal) {
+//           reject();
+//         } else {
+//           resolve('Enjoy Your Meal');
+//         }
+//       }, 3000);
+//     });
+//   };
+//   chkPromise()
+//     .then((value) => console.log(value))
+//     .catch(() => console.log('BURNT'));
+//   chkPromise().catch(() => console.log('BURNT'));
+//  let checkpromise = ()=> 
+//  {
+// return new Promise((resolve,reject) =>
+//     {
+//         setTimeout(() => 
+//         {
+//             let mealstat = false;
+//             if (mealstat)
+//             {
+//                 reject(mealstat);
+//             }
+//             else
+//             {
+//                 resolve(`Ordered Meal Ready`);
+//             }
+//         }, 3000);
+//     }
+//                   )
+//  } 
+//  checkpromise()
+//     .then((value)=>console.log(value))
+//     .catch(()=>console.log(`Burnt meal! SORRY`));
+// console.log(`Your Order is received`);
+// console.log(`Preparing your meal`);
+// let againcheckpromise = ()=>
+// {
+//     return new Promise ((resolve,reject)=>{
+//         setTimeout(() => {
+//             let stat = false;
+//             if (stat){resolve(`THE MEAL YOU ORDERED IS READY`)}
+//             else{reject()}
+//         }, 2000);
+//     })
+// }
+// againcheckpromise()
+//     .then((value)=>console.log(value))
+//     .catch(()=>console.log(`Meal Burnt. Apologies`))
+// console.log(`Order Received.`);
+// console.log(`Preparing Your Meal`);
+// let checking = ()=>{
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+//         let sarh = false;
+//         if(sarh){reject()}
+//         else{console.log(`Order Ready`)}
+//         }, 2000);        
+//     })
+// }
+// checking()
+//     .then((value)=>console.log(value))
+//     .catch(()=>console.log(`SO SORRY! THE MEAL BURNT ;(`))
+// console.log(`Your Order Received!`)
+// setTimeout(() => {
+//     console.log(`Preparing`)
+// }, 1000);
+// setTimeout(() => {
+//     for (let i=0;i<=3;i++)
+//     {console.log(`.`);}
+// }, 2000);
+// let barbarcheck= ()=> {
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+//             let maani = true;
+//             if(maani){resolve(maani)}
+//             else{reject(maani)}
+//         }, 2000);
+//     })
+// }
+// barbarcheck()
+//     .then((value)=>console.log(`WAIT IS OVER! ENJOY YOUR MEAL`))
+//     .catch((value)=>console.log(`OH NO! The meal burnt ;(`))
+let makeOrderz = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            let jal = true;
-            if (jal) {
-                reject();
+            let burnt = true;
+            if (burnt) {
+                reject(`BURNT PIZZA`);
             }
             else {
-                resolve('Enjoy Your Meal');
+                resolve(`YOUR PIZZA IS READY`);
             }
-        }, 3000);
+        }, 4000);
     });
 };
-chkPromise()
-    .then((value) => console.log(value))
-    .catch(() => console.log('BURNT'));
-chkPromise().catch(() => console.log('BURNT'));
+let getOrderz = () => __awaiter(void 0, void 0, void 0, function* () {
+    // in this approach try and catch is used for error handling
+    try {
+        let result = yield makeOrderz();
+        console.log(result);
+    }
+    catch (error) {
+        console.log(error);
+    }
+});
+getOrderz();

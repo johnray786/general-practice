@@ -187,24 +187,120 @@
 
 
 //BETTER APPROACH IS PROMISES THAN CALLBACKS
-console.log(`Order Received`)
-let chkPromise = () => {
-    return new Promise((resolve, reject) => {
+// console.log(`Order Received`)
+// let chkPromise = () => {
+//     return new Promise((resolve, reject) => {
       
-      setTimeout(() => {
-        let jal = true;
-        if (jal) {
-          reject();
-        } else {
-          resolve('Enjoy Your Meal');
-        }
-      }, 3000);
+//       setTimeout(() => {
+//         let jal = true;
+//         if (jal) {
+//           reject();
+//         } else {
+//           resolve('Enjoy Your Meal');
+//         }
+//       }, 3000);
+//     });
+//   };
+  
+//   chkPromise()
+//     .then((value) => console.log(value))
+//     .catch(() => console.log('BURNT'));
+  
+//   chkPromise().catch(() => console.log('BURNT'));
+//  let checkpromise = ()=> 
+//  {
+// return new Promise((resolve,reject) =>
+//     {
+//         setTimeout(() => 
+//         {
+//             let mealstat = false;
+//             if (mealstat)
+//             {
+//                 reject(mealstat);
+//             }
+//             else
+//             {
+//                 resolve(`Ordered Meal Ready`);
+//             }
+//         }, 3000);
+//     }
+//                   )
+//  } 
+//  checkpromise()
+//     .then((value)=>console.log(value))
+//     .catch(()=>console.log(`Burnt meal! SORRY`));
+
+// console.log(`Your Order is received`);
+// console.log(`Preparing your meal`);
+// let againcheckpromise = ()=>
+// {
+//     return new Promise ((resolve,reject)=>{
+//         setTimeout(() => {
+//             let stat = false;
+//             if (stat){resolve(`THE MEAL YOU ORDERED IS READY`)}
+//             else{reject()}
+//         }, 2000);
+//     })
+// }
+// againcheckpromise()
+//     .then((value)=>console.log(value))
+//     .catch(()=>console.log(`Meal Burnt. Apologies`))
+
+// console.log(`Order Received.`);
+// console.log(`Preparing Your Meal`);
+// let checking = ()=>{
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+//         let sarh = false;
+//         if(sarh){reject()}
+//         else{console.log(`Order Ready`)}
+//         }, 2000);        
+
+//     })
+// }
+// checking()
+//     .then((value)=>console.log(value))
+//     .catch(()=>console.log(`SO SORRY! THE MEAL BURNT ;(`))
+// console.log(`Your Order Received!`)
+// setTimeout(() => {
+//     console.log(`Preparing`)
+// }, 1000);
+
+// setTimeout(() => {
+//     for (let i=0;i<=3;i++)
+//     {console.log(`.`);}
+// }, 2000);
+// let barbarcheck= ()=> {
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+//             let maani = true;
+//             if(maani){resolve(maani)}
+//             else{reject(maani)}
+//         }, 2000);
+//     })
+// }
+// barbarcheck()
+//     .then((value)=>console.log(`WAIT IS OVER! ENJOY YOUR MEAL`))
+//     .catch((value)=>console.log(`OH NO! The meal burnt ;(`))
+let makeOrderz = ()=>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            let burnt = true;
+            if(burnt){reject(`BURNT PIZZA`)}
+            else {resolve(`YOUR PIZZA IS READY`);}
+        }, 4000);
+        
     });
-  };
-  
-  chkPromise()
-    .then((value) => console.log(value))
-    .catch(() => console.log('BURNT'));
-  
-  chkPromise().catch(() => console.log('BURNT'));
-  
+}
+
+let getOrderz = async () => {
+    // in this approach try and catch is used for error handling
+    try{
+        let result = await makeOrderz();
+        console.log(result);}
+    catch(error){
+        console.log(error);
+    }
+    }
+    
+    getOrderz();

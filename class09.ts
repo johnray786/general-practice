@@ -96,15 +96,5 @@ let makeOrder = ()=>{
 //     .catch(()=>console.log(`Something went wrong!`))//reject function body
 
 //async & await is the best practice of all then .then .catch
-let getOrder = async () => {
-// in this approach try and catch is used for error handling
-try{
-    let result = await makeOrder();
-    console.log(result);}
-catch(error){
-    console.log(error);
-}
-}
 
-getOrder();
 //for rejection you need error handling

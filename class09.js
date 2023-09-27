@@ -5,15 +5,6 @@
 // //if theres a code which takes time then rest of the code doesnt run
 // //for that async works
 // //meaning rest of the code is being run while a task is being performed
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 // console.log("Task 1");
 // for (let i = 0; i < 10000000000; i++){}
 // // above code takes time to run so async programming comes into play
@@ -92,15 +83,4 @@ let makeOrder = () => {
 //     .then((value)=>console.log(value))//resolve function body
 //     .catch(()=>console.log(`Something went wrong!`))//reject function body
 //async & await is the best practice of all then .then .catch
-let getOrder = () => __awaiter(void 0, void 0, void 0, function* () {
-    // in this approach try and catch is used for error handling
-    try {
-        let result = yield makeOrder();
-        console.log(result);
-    }
-    catch (error) {
-        console.log(error);
-    }
-});
-getOrder();
 //for rejection you need error handling
