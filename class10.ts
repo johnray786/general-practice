@@ -27,9 +27,26 @@
 // OBJECT ORIENTED PROGRAMMING
 
 class Student {
-name:string= 'Dilawar';
-age:number=22;
+name:string;
+age:number;
+constructor(name:string,age:number){
+    this.age=age;
+    this.name=name;
+    // console.log(this)
+    //this creates the object when you call new Student();
+}
 }
 
-let studentInfo = new Student();
+let studentInfo = new Student("Hamza",33);
 console.log(studentInfo);
+let studentInfo1 = new Student('Dilawar',22);
+console.log(studentInfo1);
+
+class Point {
+    x!:number;
+
+}
+let bbbb = new Point();
+bbbb.x=786;
+
+

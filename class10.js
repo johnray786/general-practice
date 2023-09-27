@@ -21,10 +21,18 @@
 // console.log(abab)
 // OBJECT ORIENTED PROGRAMMING
 class Student {
-    constructor() {
-        this.name = 'Dilawar';
-        this.age = 22;
+    constructor(name, age) {
+        this.age = age;
+        this.name = name;
+        // console.log(this)
+        //this creates the object when you call new Student();
     }
 }
-let studentInfo = new Student();
+let studentInfo = new Student("Hamza", 33);
 console.log(studentInfo);
+let studentInfo1 = new Student('Dilawar', 22);
+console.log(studentInfo1);
+class Point {
+}
+let bbbb = new Point();
+bbbb.x = 786;
