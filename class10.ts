@@ -79,11 +79,18 @@ print();
 }
 
 }
-let myPizza = new Pizza('Tikka','Medium','Sausage');
+//let myPizza = new Pizza('Tikka','Medium','Sausage');
 // myPizza.taste.push('Cheese');
 // console.log(myPizza.taste);
 // console.log(myPizza)
 
-class Cusine extends Pizza {
+class Cuisine extends Pizza {
     meals!:string;
+
+    constructor(name:string){
+        super('Fajita','Large','Cheese');
+        console.log(`This is ${name} dish`)
+    }
+    
 }
+let myCuisine = new Cuisine('Italian');
